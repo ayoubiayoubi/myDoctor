@@ -1,0 +1,298 @@
+:root {
+    --colorDropdown: #c8cdd0;
+    --mainColor: #1e4854;
+    --BackgroundDropdown: #2f5560;
+    --color: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../img/hobital2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: scale(0.8);
+    position: relative;
+}
+
+.BookAppointment {
+    width: 100%;
+    color: var(--colorDropdown);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Start Navbar */
+.BookAppointment .boxNavbar {
+    width: 100%;
+    background-color: var(--mainColor);
+}
+
+.container {
+    height: 100%;
+}
+
+.BookAppointment .navbar {
+    background-color: var(--mainColor);
+}
+
+.container .navbar .boxDro {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.BookAppointment .container .navbar .dropdown button {
+    border-radius: 20px;
+    background-color: var(--BackgroundDropdown);
+}
+
+.BookAppointment .container .navbar .dropdown button .fa-bars:before {
+    font-size: 13px;
+    margin-left: 5px;
+}
+
+.BookAppointment .container .navbar .dropdown .dropdown-menu {
+    background-color: var(--BackgroundDropdown);
+}
+
+.BookAppointment .container .navbar .dropdown .dropdown-menu .dropdown-item {
+    color: var(--colorDropdown);
+}
+
+.BookAppointment .container .navbar .navbar-brand .fa-house-medical:before {
+    margin-right: 5px;
+}
+
+.BookAppointment .container .navbar .navbar-brand {
+    color: var(--color);
+}
+
+.BookAppointment .container .navbar .btn-primary {
+    background-color: #fff;
+    color: var(--mainColor);
+    border-radius: 20px;
+}
+
+.BookAppointment .container .navbar .btn-primary:hover,
+.BookAppointment .container .navbar .navbar-brand:hover,
+.dropdown-item:focus,
+.dropdown-item:hover {
+    color: #007bff !important;
+}
+
+@media (min-width:300px) {
+    .BookAppointment .container .navbar .dropdown .dropdown-menu .contact {
+        display: none;
+    }
+}
+
+@media (max-width:410px) {
+    .navbar-brand {
+        display: none;
+    }
+}
+
+@media (max-width:300px) {
+    .boxNavbar .btn-primary {
+        display: none;
+    }
+}
+
+/* End Navbar */
+
+/* Start Main */
+.BookAppointment .boxMain {
+    background-color: #fff;
+    position: relative;
+}
+
+.BookAppointment .boxMain .element {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    right: 0;
+    background-image: url(../img/hobital2.jpg);
+    background-size: cover;
+}
+
+.boxMain .content {
+    background-color: #fff;
+    padding: 25px 25px 0 0;
+}
+
+.content,
+.boxImg {
+    height: 100%;
+}
+
+.content .service {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.content .service h2 {
+    position: relative;
+    padding: 15px 0;
+    color: #313337;
+}
+
+.content .service h2::after {
+    content: "";
+    position: absolute;
+    background-color: transparent;
+    border-style: solid;
+    border-width: 15px;
+    border-color: #fc906b #fc906b transparent transparent;
+    right: 0;
+    top: 0;
+}
+
+.content .service .animation {
+    width: 100%;
+    height: 2px;
+    background-color: #cae4eb;
+    margin-top: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content .service .animation span {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    position: relative;
+}
+
+.content .service .animation span div {
+    position: absolute;
+    top: -35px;
+}
+
+.content .service .animation span:first-child {
+    background-color: #1b4855;
+    color: #313337;
+}
+
+.content .service .animation span:not(first-child) {
+    background-color: #fff;
+    border: 2px solid #cae4eb;
+}
+
+.content .service .animation span:last-child {
+    visibility: hidden;
+}
+
+.content .service .userSelected {
+    color: #313337;
+    margin-top: 40px;
+}
+
+.content .service .userSelected form h5 {
+    margin-bottom: 20px;
+}
+
+.content .service .userSelected form label {
+    margin-bottom: 7px;
+}
+
+.content .service .userSelected form label {
+    display: block;
+}
+
+.content .service .userSelected form input {
+    width: 100%;
+    height: 35px;
+    padding: 10px;
+    outline: none;
+    border: 2px solid rgb(207, 207, 207);
+    margin-bottom: 20px;
+    border-radius: 5px;
+
+}
+
+.content .service .userSelected form input::placeholder {
+    color: rgb(184, 184, 184);
+}
+
+.form-select {
+    margin-bottom: 20px;
+}
+
+.form-select:focus {
+    box-shadow: none;
+}
+
+.content .service .userSelected form .button {
+    display: flex;
+    justify-content: space-between;
+}
+
+.content .service .userSelected form .button input {
+    width: 120px;
+    padding: 25px 35px;
+    line-height: 0;
+    margin: 5px 0;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.content .service .userSelected form .button input:first-child {
+    background-color: transparent;
+    color: var(--mainColor);
+
+}
+
+.content .service .userSelected form .button input:last-child {
+    background-color: var(--mainColor);
+    color: #fff;
+}
+
+.form-step {
+    display: none;
+}
+
+.form-step.active {
+    display: block;
+}
+
+@media (max-width:992px) {
+    .BookAppointment .boxMain .element {
+        display: none;
+    }
+
+    .boxMain .content {
+        width: 100% !important;
+        padding: 25px;
+    }
+}
+
+@media (max-width:520px) {
+    .content .service .animation {
+        display: none;
+    }
+}
+
+@media (max-width:305px) {
+    .content .service .userSelected form .button {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    body {
+        transform: scale(0.7);
+    }
+}
+
+/* End Main */
