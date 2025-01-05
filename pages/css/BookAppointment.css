@@ -3,6 +3,7 @@
     --mainColor: #1e4854;
     --BackgroundDropdown: #2f5560;
     --color: #fff;
+
 }
 
 * {
@@ -12,27 +13,18 @@
 }
 
 body {
-    width: 100%;
-    height: 100vh;
     background-image: url(../img/hobital2.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     transform: scale(0.8);
-    position: relative;
 }
 
 .BookAppointment {
-    width: 100%;
     color: var(--colorDropdown);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 /* Start Navbar */
 .BookAppointment .boxNavbar {
-    width: 100%;
     background-color: var(--mainColor);
 }
 
@@ -42,12 +34,6 @@ body {
 
 .BookAppointment .navbar {
     background-color: var(--mainColor);
-}
-
-.container .navbar .boxDro {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
 }
 
 .BookAppointment .container .navbar .dropdown button {
@@ -108,17 +94,13 @@ body {
 }
 
 /* End Navbar */
-
 /* Start Main */
 .BookAppointment .boxMain {
     background-color: #fff;
-    position: relative;
+    min-height: 700px;
 }
 
 .BookAppointment .boxMain .element {
-    position: absolute;
-    width: 50%;
-    height: 100%;
     right: 0;
     background-image: url(../img/hobital2.jpg);
     background-size: cover;
@@ -132,12 +114,6 @@ body {
 .content,
 .boxImg {
     height: 100%;
-}
-
-.content .service {
-    width: 100%;
-    height: 100%;
-    position: relative;
 }
 
 .content .service h2 {
@@ -158,12 +134,11 @@ body {
 }
 
 .content .service .animation {
-    width: 100%;
     height: 2px;
     background-color: #cae4eb;
     margin-top: 45px;
-    display: flex;
     align-items: center;
+    display: flex;
     justify-content: space-between;
 }
 
@@ -181,6 +156,9 @@ body {
 
 .content .service .animation span:first-child {
     background-color: #1b4855;
+}
+
+.content .service .animation span .activeColor {
     color: #313337;
 }
 
@@ -193,24 +171,105 @@ body {
     visibility: hidden;
 }
 
+/* Start Animation */
+.content .service .animation::after {
+    content: "";
+    display: inline-block;
+    width: 0%;
+    height: 2px;
+    background-color: #1b4855;
+    position: absolute;
+    animation: var(--animation);
+}
+
+/*Next Animation*/
+@keyframes green_line_Next_1 {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 25%;
+    }
+}
+
+@keyframes green_line_Next_2 {
+    0% {
+        width: 25%;
+    }
+
+    100% {
+        width: 50%;
+    }
+}
+
+@keyframes green_line_Next_3 {
+    0% {
+        width: 50%;
+    }
+
+    100% {
+        width: 75%;
+    }
+}
+
+/*back Animation*/
+@keyframes green_line_Back_1 {
+    0% {
+        width: 25%;
+    }
+
+    100% {
+        width: 0%;
+    }
+}
+
+@keyframes green_line_Back_2 {
+    0% {
+        width: 50%;
+    }
+
+    100% {
+        width: 25%;
+    }
+}
+
+@keyframes green_line_Back_3 {
+    0% {
+        width: 75%;
+    }
+
+    100% {
+        width: 50%;
+    }
+}
+
+@keyframes backgroundSpan {
+    100% {
+        background-color: #1b4855;
+    }
+}
+
 .content .service .userSelected {
     color: #313337;
     margin-top: 40px;
+    animation: name duration timing-function delay iteration-count direction fill-mode;
 }
 
-.content .service .userSelected form h5 {
+.content .service .userSelected div h5 {
     margin-bottom: 20px;
 }
 
-.content .service .userSelected form label {
+/* .content .service .userSelected div label {
+    margin-bottom: 7px;
+} */
+
+.content .service .userSelected div label {
+    display: block;
     margin-bottom: 7px;
 }
 
-.content .service .userSelected form label {
-    display: block;
-}
-
-.content .service .userSelected form input {
+.content .service .userSelected div input {
     width: 100%;
     height: 35px;
     padding: 10px;
@@ -218,10 +277,20 @@ body {
     border: 2px solid rgb(207, 207, 207);
     margin-bottom: 20px;
     border-radius: 5px;
-
 }
 
-.content .service .userSelected form input::placeholder {
+#symptoms {
+    padding: 10px 0 0 10px;
+    outline: none;
+    border: 2px solid rgb(207, 207, 207);
+}
+
+input[type="file"] {
+    padding: 10px;
+    height: 45px !important;
+}
+
+.content .service .userSelected div input::placeholder {
     color: rgb(184, 184, 184);
 }
 
@@ -233,12 +302,12 @@ body {
     box-shadow: none;
 }
 
-.content .service .userSelected form .button {
+.content .service .userSelected div .button {
     display: flex;
     justify-content: space-between;
 }
 
-.content .service .userSelected form .button input {
+.content .service .userSelected div .button input {
     width: 120px;
     padding: 25px 35px;
     line-height: 0;
@@ -248,13 +317,46 @@ body {
     cursor: pointer;
 }
 
-.content .service .userSelected form .button input:first-child {
+#symptoms {
+    height: 100px;
+    margin-bottom: 30px;
+}
+
+#medical-reports,
+#insurance-info {
+    margin-bottom: 30px;
+}
+
+#insurance-info {
+    height: 60px;
+}
+
+.buttonMedical {
+    margin-top: 30px;
+}
+
+.confirmed {
+    margin-top: 220px;
+}
+
+.confirmed h5 {
+    color: black;
+}
+
+.confirmed div input {
+    background-color: var(--mainColor);
+    width: fit-content !important;
+    color: #fff;
+    height: 50px !important;
+}
+
+.content .service .userSelected div .button input:first-child {
     background-color: transparent;
     color: var(--mainColor);
 
 }
 
-.content .service .userSelected form .button input:last-child {
+.content .service .userSelected div .button input:last-child {
     background-color: var(--mainColor);
     color: #fff;
 }
@@ -265,6 +367,15 @@ body {
 
 .form-step.active {
     display: block;
+}
+
+.Appointment_type div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Appointment_type div input {
+    width: 20px !important;
 }
 
 @media (max-width:992px) {
@@ -285,14 +396,21 @@ body {
 }
 
 @media (max-width:305px) {
-    .content .service .userSelected form .button {
+    .content .service .userSelected div .button {
         flex-direction: column;
         align-items: center;
-    }
-
-    body {
-        transform: scale(0.7);
     }
 }
 
 /* End Main */
+
+/* Adjustments for phones in landscape mode */
+@media screen and (max-width: 968px) and (orientation: landscape) {
+    body {
+        transform: none;
+    }
+
+    .BookAppointment {
+        height: 100vh;
+    }
+}

@@ -12,19 +12,21 @@
   <title>BookAppointment</title>
 </head>
 
-<body>
+<body class="w-100 vh-100 position-relative">
 
-  <div class="BookAppointment">
-    <div class="boxNavbar">
+  <div class="BookAppointment w-100 position-absolute top-50 start-50 translate-middle">
+    <!-- Main navigation bar -->
+    <div class="boxNavbar w-100">
       <div class="container">
         <nav class="navbar">
-          <div class="boxDro">
+          <!-- Dropdown menu section -->
+          <div class="boxDro w-100 d-flex justify-content-between">
             <div class="dropdown">
               <button class="btn btn-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Menu
                 <i class="fa-solid fa-bars"></i>
               </button>
-
+              <!--Contents of the drop-down list  -->
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="#">Home</a></li>
                 <li><a class="dropdown-item" href="#">Services</a></li>
@@ -32,6 +34,7 @@
                 <li><a class="dropdown-item" href="#">Login</a></li>
               </ul>
             </div>
+            <!-- Website logo with link to the home page -->
             <a class="navbar-brand" href="#">
               <i class="fa-solid fa-house-medical"></i>
               varma
@@ -43,37 +46,41 @@
           <nav>
       </div>
     </div>
-    <div class="boxMain d-flex">
-      <div class="element"></div>
+    <!-- The main section of the page -->
+    <div class="boxMain position-relative d-flex">
+      <div class="element w-50 h-100 position-absolute"></div>
       <div class="container">
         <div class="content w-50">
-          <div class="service">
+          <div class="service w-100 h-100 position-relative">
             <h2>Book Appointment</h2>
-            <div class="animation">
+            <!-- Animation to move between steps -->
+            <div class="animation w-100 position-relative justify-content-between">
               <span>
-                <div>Patientinfo</div>
-              </span>
-              <span>
-                <div>Time</div>
+                <div class="activeColor">Patientinfo</div>
               </span>
               <span>
                 <div>Details</div>
               </span>
               <span>
-                <div>Done</div>
+                <div>MedicalInfo</div>
+              </span>
+              <span>
+                <div>Confirmed</div>
               </span>
               <span></span>
             </div>
+            <!-- Multi-step booking form -->
             <div class="userSelected">
-              <form id="multiStepForm">
+              <div id="multiStepForm">
+                <!-- Step 1: Patient information -->
                 <div class="form-step active">
-                  <h5>Patient in formation</h5>
+                  <h5 class="title_Patient">Patient information</h5>
                   <label for="fullName">Full Name:</label>
                   <input type="text" id="fullName" placeholder="Enter Your Full Name" required>
                   <label for="datBirth">Dat Of Birth:</label>
                   <input type="date" id="datBirth" required>
-                  <label for="">Gender</label>
-                  <select class="form-select form-select-sm" aria-label="Small select example" required>
+                  <label for="gender">Gender</label>
+                  <select class="form-select form-select-sm" id="gender" aria-label="Small select example" required>
                     <option selected>Select Gender</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
@@ -83,21 +90,82 @@
                   <label for="email">Email Address:</label>
                   <input type="email" id="email" placeholder="Enter Your Email" required>
                   <div class="button">
-                    <input class="btn btn-primary" id="" type="reset" value="Reset">
+                    <input class="btn btn-primary" id="reset" type="reset" value="Reset">
                     <input class="next" id="next1" class="btn btn-primary" type="text" value="Next">
                   </div>
                 </div>
+                <!-- Step 2: Appointment details -->
                 <div class="form-step">
+                  <h5 class="title_Patient">Appointment Details</h5>
+                  <label for="reason">Reason For Visit:</label>
+                  <select id="reason" class="form-select form-select-sm" aria-label="Small select example" required>
+                    <option selected>Select Reason</option>
+                    <option value="routine">Routine examination</option>
+                    <option value="follow-up">Follow-up appointment</option>
+                    <option value="general">General illness</option>
+                    <option value="annual">Annual physical examination</option>
+                    <option value="vaccination">Vaccination</option>
+                  </select>
+                  <label for="">Appointment type:</label>
+                  <div class="Appointment_type">
+                    <div>
+                      <label for="in-person">personally</label>
+                      <input type="radio" id="in-person" name="appointment-type" value="in-person">
+                    </div>
+                    <div>
+                      <label for="telemedicine"> remote</label>
+                      <input type="radio" id="telemedicine" name="appointment-type" value="telemedicine">
+                    </div>
+                  </div>
+                  <label for="date">Preferred date:</label>
+                  <input type="date" id="date" required>
+                  <label for="time">Preferred time:</label>
+                  <input type="time" id="time" required>
+                  <label for="sDoctor">The specialist doctor</label>
+                  <select id="sDoctor" class="form-select form-select-sm" aria-label="Small select example" required>
+                    <option selected>Select Doctor</option>
+                    <option value="doctor A">Doctor A</option>
+                    <option value="doctor B">Doctor b</option>
+                  </select>
+                  <div class="button">
+                    <input class="btn btn-primary" id="prev1" type="button" value="Back">
+                    <input class="next" id="next2" class="btn btn-primary" type="text" value="Next">
+                  </div>
+                </div>
+                <!-- Step 3: Medical information -->
+                <div class="form-step">
+                  <h5 class="title_Patient">Medical Information</h5>
+                  <label for="symptoms" class="">Current Symptoms/Concerns:</label>
+                  <textarea id="symptoms" placeholder="Describe your symptoms" class="w-100" required></textarea>
+                  <label for="medical-reports" class="">Upload Medical Reports:</label>
+                  <input type="file" id="medical-reports" class="">
+                  <label for="insurance-info" class="">Insurance Information:</label>
+                  <input type="text" id="insurance-info" placeholder="Enter insurance provider & ID" class="">
+                  <div class="button buttonMedical">
+                    <input class="btn btn-primary" id="prev2" type="button" value="Back">
+                    <input class="btn btn-primary submit" id="next3" type="button" value="submit">
+                  </div>
 
                 </div>
-              </form>
+                <!-- Step 4: Confirm your reservation -->
+                <div class="form-step confirmed">
+                  <h5 class="text-2xl font-bold text-center mb-6">Appointment Confirmed!</h5>
+                  <p class="mb-6 text-center">Thank you for booking your appointment. You will receive a confirmation
+                    email shortly.</p>
+                  <div class="d-flex justify-content-center">
+                    <input type="button" class="BookAnother" value="Book Another">
+                  </div>
+                </div>
+
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <script src="js/BookAppointment.js"></script>
+  <script src="js/BookAppointment.js " defer type="module"></script>
+  <script src="js/sent_fields.js" type="module"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
