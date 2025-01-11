@@ -29,6 +29,7 @@ body {
 }
 
 .container {
+    max-width: 95% !important;
     height: 100%;
 }
 
@@ -73,6 +74,11 @@ body {
 .dropdown-item:focus,
 .dropdown-item:hover {
     color: #007bff !important;
+}
+@media (min-width:1500px) {
+    body {
+        transform: scale(0.9);
+    }
 }
 
 @media (min-width:300px) {
@@ -377,7 +383,6 @@ input[type="file"] {
 .Appointment_type div input {
     width: 20px !important;
 }
-
 @media (max-width:992px) {
     .BookAppointment .boxMain .element {
         display: none;
