@@ -404,6 +404,11 @@ input[type="file"] {
 
 /* End Main */
 
+/*function filter  */
+.colorFilter{
+    color: red !important;
+}
+
 /* Adjustments for phones in landscape mode */
 @media screen and (max-width: 968px) and (orientation: landscape) {
     body {

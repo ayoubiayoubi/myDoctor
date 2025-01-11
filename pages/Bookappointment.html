@@ -76,19 +76,19 @@
                 <div class="form-step active">
                   <h5 class="title_Patient">Patient information</h5>
                   <label for="fullName">Full Name:</label>
-                  <input type="text" id="fullName" placeholder="Enter Your Full Name" required>
+                  <input type="text" id="fullName" placeholder="Please Enter Your Full Name" required>
                   <label for="datBirth">Dat Of Birth:</label>
-                  <input type="date" id="datBirth" required>
+                  <input type="text" placeholder="mm/dd/yyyy" id="datBirth" onfocus="this.type='date'" onblur="if(!this.value)this.type='text'" required>
                   <label for="gender">Gender</label>
-                  <select class="form-select form-select-sm" id="gender" aria-label="Small select example" required>
-                    <option selected>Select Gender</option>
+                  <select  onblur="this.style.color='black'" class="form-select form-select-sm" id="gender" aria-label="Small select example" required>
+                    <option selected>Please Select Gender</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                   </select>
                   <label for="phone">Phone Number:</label>
-                  <input type="tel" id="phone" placeholder="Enter Your Phone Number" required>
+                  <input type="tel" id="phone" placeholder="Please Enter Your Phone Number" required>
                   <label for="email">Email Address:</label>
-                  <input type="email" id="email" placeholder="Enter Your Email" required>
+                  <input type="email" id="email" placeholder="Please Enter Your Email" required>
                   <div class="button">
                     <input class="btn btn-primary" id="reset" type="reset" value="Reset">
                     <input class="next" id="next1" class="btn btn-primary" type="button" value="Next">
@@ -118,9 +118,11 @@
                     </div>
                   </div>
                   <label for="date">Preferred date:</label>
-                  <input type="date" id="date" required>
+                  <!-- <input type="date" id="date" required> -->
+                  <input type="text" placeholder="mm/dd/yyyy" id="date" onfocus="this.type='date'" onblur="if(!this.value)this.type='text'" required>
                   <label for="time">Preferred time:</label>
-                  <input type="time" id="time" required>
+                  <!-- <input type="time" id="time" required> -->
+                  <input type="text" placeholder="--:-- --" id="time" onfocus="this.type='time'" onblur="if(!this.value)this.type='text'" required>
                   <label for="sDoctor">The specialist doctor</label>
                   <select id="sDoctor" class="form-select form-select-sm" aria-label="Small select example" required>
                     <option selected>Select Doctor</option>
@@ -136,11 +138,11 @@
                 <div class="form-step">
                   <h5 class="title_Patient">Medical Information</h5>
                   <label for="symptoms" class="">Current Symptoms/Concerns:</label>
-                  <textarea id="symptoms" placeholder="Describe your symptoms" class="w-100" required></textarea>
+                  <textarea id="symptoms" placeholder="Please Enter Describe your symptoms" class="w-100" required></textarea>
                   <label for="medical-reports" class="">Upload Medical Reports:</label>
                   <input type="file" id="medical-reports" class="">
                   <label for="insurance-info" class="">Insurance Information:</label>
-                  <input type="text" id="insurance-info" placeholder="Enter insurance provider & ID" class="">
+                  <input type="text" id="insurance-info" placeholder="Please Enter insurance provider & ID" class="">
                   <div class="button buttonMedical">
                     <input class="btn btn-primary" id="prev2" type="button" value="Back">
                     <input class="btn btn-primary submit" id="next3" type="button" value="submit">

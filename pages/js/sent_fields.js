@@ -4,6 +4,7 @@ var validation = false;
 buttonSubmit.addEventListener(`click`, (event) => {
     if (formUtils.checkAllInputsFilled("active")) {
         formUtils.add_information_to_data();
+        console.log(formUtils.medicalData)
 
         fetch('http://localhost/index.php', {
             method: 'POST',

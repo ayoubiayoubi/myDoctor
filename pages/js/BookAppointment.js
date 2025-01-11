@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     //To move the model forward
     document.querySelectorAll("[id^='next']").forEach((button) => {
         button.addEventListener("click", () => {
+            // formUtils.checkAll("active")
             //Check if all fields in the current step are filled
             if (formUtils.checkAllInputsFilled("active") == true && currentStep < formUtils.formSteps.length - 1) {
                 currentStep++;
@@ -37,7 +38,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     // When you click the "reset" button, the contents of the fields are cleared
     clearButton.addEventListener("click", () => {
-        formUtils.resetInput()
+        formUtils.resetInput();
+        var styles = document.querySelectorAll("style")
+        if(styles){
+            styles.forEach((style)=>{
+                style.remove()
+            })
+            // console.log(style)
+        }
     })
 
 });

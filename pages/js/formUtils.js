@@ -1,22 +1,76 @@
 
 // //Check if all form fields are filled in
+var style = document.createElement("style");
 export function checkAllInputsFilled(formId) {
     const form = document.querySelector(`.${formId}`);
-    if (!form) {
-        console.error("النموذج غير موجود!");
-        return false;
-    }
-    const inputs = form.querySelectorAll("input");
+    const inputs = form.querySelectorAll("input,select,textarea");
+    var Appointment_type = document.querySelector(".Appointment_type")
+    // Check if the appointment type is selected.
+    const appointmentType = document.querySelector('input[name="appointment-type"]:checked');
+    // Iterate over all fields to check the entered values.
     for (let input of inputs) {
+        // Check for non-empty fields except the submit button.
         if (input.type !== "submit" && input.value.trim() === "") {
-            input.setAttribute("placeholder", `plase enter your ${input.getAttribute("id")}`);
-            var style = document.createElement("style");
-            style.innerHTML = `#${input.getAttribute("id")}::placeholder{color:red !important}`;
-            document.head.appendChild(style);
-            return false;
+            if (input.hasAttribute("placeholder")) {
+                addColor(input)
+            }
+            else if (input.type == "file" && input.files.length == 0) {
+                input.classList.add("colorFilter")
+                backColor(input)
+            }
+            return false
+        }
+        // Verify that default values ​​are selected in drop-down lists.
+        else if ((input.value === "Please Select Gender" && input.id == "gender") ||
+            (input.value === "Select Reason" && input.id == "reason") ||
+            (input.value === "Select Doctor" && input.id == "sDoctor")) {
+            var selected = input.querySelector("option")
+            selected.innerHTML = input.value
+            input.classList.add("colorFilter")
+            backColor(input)
+            return false
+        }
+        // Validate phone numbers.
+        else if (input.value !== "" && input.type == "tel") {
+            var tel = /\b\d{10}\b/g
+            if (!tel.test(input.value)) {
+                input.value = ""
+                addColor(input)
+                return false
+            }
+        }
+        else if (input.value !== "" && input.type == "email") {
+            var email = /^[a-zA-Z0-9._%+-]+@gmail\.com$/
+            if (!email.test(input.value)) {
+                input.value = ""
+                addColor(input)
+                return false
+            }
+        }
+        else if (input.type == "radio") {
+            if (!appointmentType) {
+                Appointment_type.classList.add("colorFilter");
+                return false
+            }
+            else {
+                Appointment_type.classList.remove("colorFilter")
+            }
         }
     }
-    return true;
+    return true    // Returns true if all fields are filled in correctly.
+}
+// Return to the original color
+function backColor(element) {
+    element.onblur = () => {
+        element.classList.remove("colorFilter")
+    }
+}
+// Add emphasis color
+function addColor(element) {
+    element.setAttribute("placeholder", `${element.getAttribute("placeholder")}`);
+    style.innerHTML = `#${element.getAttribute("id")}::placeholder{color:red !important}`;
+    document.head.appendChild(style);
+
 }
 // Define the steps within the multistage model
 export const formSteps = document.querySelectorAll(".form-step");
