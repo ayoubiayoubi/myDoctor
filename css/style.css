@@ -1,0 +1,204 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.poppins-black {
+    font-family: "Poppins", serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+/* Start Header */
+header {
+    width: 100%;
+    height: 100px;
+    background-color: #1e4854;
+    display: flex;
+    align-items: center;
+    font-family: "Poppins", serif;
+    font-weight: bold;
+}
+
+.container {
+    max-width: 95% !important;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .container .logo {
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+}
+
+header .container .dropdown button {
+    background-color: #2f5560;
+}
+
+header .container .boxDro .dropdown-menu {
+    background-color: #2f5560;
+}
+
+header .container .dropdown .dropdown-menu .dropdown-item {
+    color: #c8cdd0;
+}
+
+.dropdown-item:hover {
+    color: #007bff !important;
+}
+
+header .container .navbarNav {
+    width: 70%;
+}
+
+header .container .navbarNav li {
+    padding: 5px;
+    color: #fff;
+}
+
+header .container .navbarNav .appointment {
+    background-color: #007bff;
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #fff;
+}
+
+
+header .container .navbarNav .appointment i {
+    margin-right: 15px;
+}
+
+header .container .navbarNav .navbar-nav {
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.activeC {
+    transition: 0.5s;
+    color: #007bff !important;
+}
+
+@media (min-width:1200px) {
+    html {
+        font-size: 20px;
+    }
+}
+
+@media (min-width:885px) {
+    header .container .boxDro {
+        display: none !important;
+    }
+}
+
+@media (max-width:885px) {
+    header .container .navbarNav {
+        display: none;
+    }
+}
+
+
+/* End Header */
+main {
+    width: 100%;
+}
+
+main .homePage {
+    background-image: url(../img/medical_7.jpg);
+    height: calc(100vh - 100px);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+main .homePage .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+main .homePage .container .boxContent {
+    max-width: 400px;
+}
+
+main .homePage .container .boxContent .boxCircle {
+    display: flex;
+    align-items: center;
+}
+
+main .homePage .container .boxContent .boxCircle .circle {
+    width: 40px;
+    height: 40px;
+    position: relative;
+}
+
+main .homePage .container .boxContent .boxCircle .circle span {
+    position: absolute;
+    background-color: #007bff;
+    border-radius: 50%;
+}
+
+main .homePage .container .boxContent .boxCircle .circle span:first-child {
+    width: 15px;
+    height: 15px;
+    right: 7%;
+}
+
+main .homePage .container .boxContent .boxCircle .circle span:nth-child(2) {
+    width: 8px;
+    height: 8px;
+    right: 16%;
+    top: 49%;
+}
+
+main .homePage .container .boxContent .boxCircle .circle span:last-child {
+    width: 10px;
+    height: 10px;
+    right: 44%;
+    top: 36%;
+}
+
+main .homePage .container .boxContent .boxCircle h6,
+main .homePage .container .boxContent h2 {
+    font-weight: bold;
+}
+
+main .homePage .container .boxContent h2 {
+    margin-top: 20px;
+}
+
+main .homePage .container .boxContent button {
+    margin-top: 20px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background-color: #007bff;
+}
+
+main .homePage .container .boxContent button a {
+    text-decoration: none;
+    padding: 20px;
+    display: inline-block;
+    color: #fff;
+    font-family: "Poppins", serif;
+    font-weight: bold;
+}
+
+@media (orientation: landscape) and (max-height: 431px) {
+    main .homePage {
+        height: auto !important;
+    }
+
+    main .homePage .container .boxContent {
+        padding: 15px 0;
+    }
+}
+
+/* hover */
+header .container .navbarNav .appointment:hover,
+main .homePage .container .boxContent button:hover {
+    transition: 0.5s;
+    background-color: #0852a2;
+}

@@ -3,7 +3,6 @@
     --mainColor: #1e4854;
     --BackgroundDropdown: #2f5560;
     --color: #fff;
-
 }
 
 * {
@@ -13,7 +12,8 @@
 }
 
 body {
-    background-image: url(../img/hobital2.jpg);
+    /* color: var(--text-color);  */
+    background-image: url(../../img/hobital2.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     transform: scale(0.8);
@@ -26,6 +26,7 @@ body {
 /* Start Navbar */
 .BookAppointment .boxNavbar {
     background-color: var(--mainColor);
+    /* background-color: var(--primary-color); */
 }
 
 .container {
@@ -35,6 +36,7 @@ body {
 
 .BookAppointment .navbar {
     background-color: var(--mainColor);
+    /* background-color: var(--primary-color); */
 }
 
 .BookAppointment .container .navbar .dropdown button {
@@ -75,6 +77,7 @@ body {
 .dropdown-item:hover {
     color: #007bff !important;
 }
+
 @media (min-width:1500px) {
     body {
         transform: scale(0.9);
@@ -108,7 +111,7 @@ body {
 
 .BookAppointment .boxMain .element {
     right: 0;
-    background-image: url(../img/hobital2.jpg);
+    background-image: url(../../img/hobital2.jpg);
     background-size: cover;
 }
 
@@ -383,6 +386,7 @@ input[type="file"] {
 .Appointment_type div input {
     width: 20px !important;
 }
+
 @media (max-width:992px) {
     .BookAppointment .boxMain .element {
         display: none;
@@ -410,7 +414,7 @@ input[type="file"] {
 /* End Main */
 
 /*function filter  */
-.colorFilter{
+.colorFilter {
     color: red !important;
 }
 
